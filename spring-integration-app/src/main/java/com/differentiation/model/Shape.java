@@ -18,4 +18,6 @@ public abstract class Shape {
     public Shape(double area) {
         this.area = area;
     }
+
+    public abstract String getTypeName();
 }

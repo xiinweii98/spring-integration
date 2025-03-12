@@ -19,4 +19,9 @@ public class Circle extends Shape {
         super(Math.PI * radius * radius);
         this.radius = radius;
     }
+
+    @Override
+    public String getTypeName() {
+        return "Circle";
+    }
 }

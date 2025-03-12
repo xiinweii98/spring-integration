@@ -19,4 +19,9 @@ public class Square extends Shape {
         super(length * length);
         this.length = length;
     }
+
+    @Override
+    public String getTypeName() {
+        return "Square";
+    }
 }
