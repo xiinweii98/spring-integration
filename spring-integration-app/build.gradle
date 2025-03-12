@@ -1,0 +1,37 @@
+plugins {
+    id 'application'
+    id "io.spring.dependency-management" version "${dependencyManagementVersion}"
+    id "org.springframework.boot" version "${springBootVersion}"
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.boot:spring-boot-dependencies:${springBootVersion}"
+    }
+}
+
+dependencies {
+    implementation libs.guava
+    implementation('org.springframework.boot:spring-boot-starter')
+
+    testImplementation libs.junit.jupiter
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+jar {
+    enabled = false
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
